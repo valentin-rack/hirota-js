@@ -3,20 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simulador de Carrito HIROTA</title>
+  <title>HIROTA - Home</title>
   <link rel="icon" type="image/svg+xml" href="images/hirota_symb_blue.svg">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
-  <!-- ===== NAVBAR ===== -->
-  <nav class="navbar">
-    <img src="images/hirota_logo_blue.svg" alt="Logo HIROTA" class="navbar-logo">
-  </nav>
 
-  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+<body>
+  <!-- ===== HEADER / NAVBAR ===== -->
+  <header class="navbar">
+    <div class="nav-left">
+      <a href="html/store.html">Store</a>
+      <a href="html/about.html">About</a>
+      <a href="html/contact.html">Contact</a>
+    </div>
+
+    <div class="nav-center">
+      <a href="index.html">
+        <img src="images/hirota_logo_blue.svg" alt="Logo HIROTA" class="navbar-center-logo">
+      </a>
+    </div>
+
+    <div class="nav-right">
+      <a href="html/cart.html" id="cart-link">Cart (0)</a>
+    </div>
+  </header>
+
+  <!-- ===== CONTENIDO PRINCIPAL DEL HOME ===== -->
   <main class="main-content">
-    <h1>Simulador de Carrito HIROTA</h1>
-    <p>(Interacción por prompts y alerts ♡♡♡ ).</p>
+    <h1>Bienvenido a HIROTA</h1>
+    <p>Best karate-gi! ♡♡♡</p>
+    <a href="html/shop.html" class="btn-cta">Ir a la tienda</a>
   </main>
 
   <!-- ===== FOOTER ===== -->
@@ -26,6 +42,8 @@
     </a>
   </footer>
 
-  <script src="main.js"></script>
+  <!-- ===== Links a js ===== -->
+  <script src="js/main.js"></script>
+
 </body>
 </html>

@@ -1,1 +1,0 @@
-// HIROTA 1.0 JS clear out
