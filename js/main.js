@@ -4,3 +4,11 @@ document.querySelectorAll('.nav-left a, .nav-right a').forEach(link => {
     link.classList.add('active');
   }
 });
+
+// Detecta el año actual para el copyright del footer
+document.addEventListener("DOMContentLoaded", () => {
+  const yearSpan = document.getElementById("year");
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+});
