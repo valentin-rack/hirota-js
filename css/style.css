@@ -1,4 +1,32 @@
-/* ========== [ RESET ] ========== */
+/* ==================== [ CUSTOM PROPERTIES] ==================== */
+:root {
+  --color-black-100: rgb(0, 0, 0);
+  --color-black-000: #111111;
+  --color-black-050: rgba(0, 0, 0, 0.5);
+  --color-black-000: #111111;
+  --color-black-000: #111111;
+  --color-hirota-red: #e21e20;
+  --color-hirota-blue: #3f5ba6;
+  --color-skyblue: #b3e5fc;
+  --color-white: #f9f9f9;
+
+  --font-arial: Arial, Helvetica, sans-serif;
+  --font-consolas: monospace;
+
+  --size-small: 0.875rem;   /* 14px */
+  --size-base: 1rem;        /* 16px */
+  --size-medium: 1.125rem;  /* 18px */
+  --size-large: 1.5rem;     /* 24px */
+  --size-xlarge: 2rem;      /* 32px */
+
+  --transition-instant: 0.0s ease-in-out;
+  --transition-soft: 0.3s ease-in-out;
+
+  --nav-bar-height: 35px
+}
+
+
+/* ==================== [ RESET ] ==================== */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +34,7 @@
 }
 
 
-/* ========== [ BODY / ESTRUCTURA BASE ] ========== */
+/* ==================== [ BODY / ESTRUCTURA BASE ] ==================== */
 html, body {
   height: 100%;
 }
@@ -15,9 +43,9 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  font-family: Arial, sans-serif;
+  font-family: var(--font-arial);
   /* Gradiente animado */
-  background: linear-gradient(135deg, #b3e5fc, #ffffff, #b3e5fc);   /* previous: #b3e5fc */
+  background: linear-gradient(135deg, var(--color-skyblue), var(--color-white), var(--color-skyblue));
   background-size: 300% 300%;
   animation: gradientMove 8s ease-in-out infinite;
 }
@@ -37,12 +65,12 @@ main {
 
 
 
-/* ========== [ NAV-BAR ] ========== */
+/* ==================== [ NAV-BAR ] ==================== */
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
-  height: 35px;
+  height: var(--nav-bar-height);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -83,19 +111,20 @@ main {
 .nav-left a,
 .nav-right a {
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.5);
-  font-family:Arial, Helvetica, sans-serif;
+  color: var(--color-black-050);
+  font-family: var(--font-arial);
   font-stretch: condensed;
-  font-size: 16px;
+  text-transform: uppercase;
+  font-size: 15px;
   transition: color 0.0s;
 }
 .nav-left a:hover,
 .nav-right a:hover {
-  color: #e21e20; /* rojo HIROTA = #e21e20 */
+  color: var(--color-hirota-red); 
 }
 .nav-left a.active,
 .nav-right a.active {
-  color: #e21e20;
+  color: var(--color-hirota-red);
   text-decoration: underline;
   text-underline-offset: 4px;
   text-decoration-thickness: 1px;
@@ -105,8 +134,9 @@ main {
 
 
 
-/* ========== [ MAIN-CONTENT ] ========== */
+/* ==================== [ MAIN-CONTENT ] ==================== */
 .main-content {
+  padding-top: var(--nav-bar-height);
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -122,24 +152,25 @@ main {
 
 
 
-/* ========== [ MAIN-STORE ] ========== */
+/* ==================== [ MAIN-STORE ] ==================== */
 .main-store {
-  flex: 1;                       /* ocupa todo el alto disponible */
+  flex: 1;                       
   display: flex;
   flex-direction: column;
-  align-items: center;           /* centra horizontal */
+  align-items: center;          
   text-align: center;
-  padding: 40px 40px;            /* respiro lateral */
+  padding: 40px 40px;
+  padding-top: calc(40px + var(--nav-bar-height));        
 }
 
 /* Main-store header */
 .main-store-header p {
   font-family: monospace;
   color:rgba(0, 0, 0, 0.3);
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
-/* ===== PRODUCT GRID ===== */
+/* Product grid */
 .product-list {
   list-style: none;
   display: grid;
@@ -166,10 +197,19 @@ main {
   border-bottom: 1px solid #d9d9d9;
 }
 .product-item-image img {
+  /* SVGs del producto */
+  padding: 75px;
   width: 100%;
   height: 100%;
+  object-fit: contain;   
+  object-position: center;  
+  opacity: 0.2;
+  background-color: #ffffff; 
+  /* Imagenes reales del producto*/
+  /* width: 100%;
+  height: 100%;
   object-fit: cover; 
-  opacity: 0.3;       
+  opacity: 0.3;        */
 }
 
 /* Contenido */
@@ -222,7 +262,7 @@ main {
   padding: 4px 8px;
   font-size: 0.85rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.0s ease;
 }
 .btn-add:hover {
   color: rgba(0, 0, 0, 0.5); 
@@ -234,7 +274,7 @@ main {
 
 
 
-/* ========== [ FOOTER ] ========== */
+/* ==================== [ FOOTER ] ==================== */
 .footer {
   width: 100%;
   background: transparent;
@@ -252,22 +292,22 @@ main {
   display: flex;              
   justify-content: center;
   align-items: center;
-  width: 100%; /* ocupa todo el ancho del footer */              
+  width: 100%;            
 }
 .footer-logo {
   width: 80%;
-  max-width: 800px; /* no se agranda demasiado en pantallas grandes */
-  opacity: 0.20; /* 🔹 transparencia ajustable (0 = invisible, 1 = opaco) */
+  max-width: 800px; 
+  opacity: 0.20; 
   transition: opacity 0.3s ease-in-out;
 }
 .footer-logo:hover {
-  opacity: 0.45; /* efecto sutil al pasar el mouse */
-  cursor: pointer; /* cambia el cursor para indicar que es clickeable */
+  opacity: 0.45; 
+  cursor: pointer; 
 }
 
 /* Copyright */
 .footer-copyright {
-  width: 100%;    /* azul similar al original */
+  width: 100%;    
   display: flex;
   justify-content: center;
   align-items: center;
@@ -275,8 +315,34 @@ main {
 }
 .footer-copyright p {
   color: rgba(0, 0, 0, 0.2);
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: monospace;
   letter-spacing: 0.3px;
   margin: 0;
 }
+
+
+
+
+/* ==================== [ MOUSE FALLING ASCII ] ==================== */
+/* .falling-symbol {
+  position: fixed;
+  color: rgba(0, 0, 0, 0.35);
+  font-family: monospace;
+  font-size: 14px;
+  pointer-events: none;     
+  user-select: none;
+  animation: fallSymbol 1.5s ease-out forwards;
+  z-index: 9999;
+}
+
+@keyframes fallSymbol {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(60px) scale(0.6);
+    opacity: 0;
+  }
+} */

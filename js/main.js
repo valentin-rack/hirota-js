@@ -12,3 +12,23 @@ document.addEventListener("DOMContentLoaded", () => {
     yearSpan.textContent = new Date().getFullYear();
   }
 });
+
+
+// Mouse ASCII symbol trial effect
+// document.addEventListener("mousemove", (e) => {
+//   createFallingSymbol(e.clientX, e.clientY);
+// });
+
+// function createFallingSymbol(x, y) {
+//   const symbol = document.createElement("span");
+//   symbol.textContent = "+";
+//   symbol.classList.add("falling-symbol");
+//   symbol.style.left = `${x}px`;
+//   symbol.style.top = `${y}px`;
+//   document.body.appendChild(symbol);
+
+//   // Eliminamos el símbolo tras la animación
+//   setTimeout(() => {
+//     symbol.remove();
+//   }, 1500);
+// }
