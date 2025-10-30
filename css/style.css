@@ -82,9 +82,9 @@ body {
   min-height: 100vh;
   flex-direction: column;
   /* Gradiente animado */
-  background: linear-gradient(135deg, var(--color-gradient), var(--color-white), var(--color-gradient));
+  /* background: linear-gradient(135deg, var(--color-gradient), var(--color-white), var(--color-gradient));
   background-size: 300% 300%;
-  animation: gradientMove 8s ease-in-out infinite;
+  animation: gradientMove 8s ease-in-out infinite; */
 }
 
 @keyframes gradientMove {
