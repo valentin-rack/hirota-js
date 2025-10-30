@@ -33,17 +33,19 @@
   <main class="main-cart">
 
     <!-- Header del carro -->
-    <section class="main-cart-header">
+    <section class="cart-header">
       <h1>CART (3)</h1>
       <button class="btn-clear">Clear all</button>
     </section>
 
     <!-- Items del carro -->
-    <section class="shopping-cart">
+    <section class="cart-items">
 
       <!-- Producto 1 -->
       <article class="cart-item">
-        <img src="../images/white.png" alt="HIROTA Takumi" class="cart-item-img">
+        <div class="cart-item-img-wrapper">
+          <img src="../images/white.png" alt="HIROTA Takumi" class="cart-item-img">
+        </div>
 
         <div class="cart-item-info">
           <h2 class="cart-item-title">HIROTA Takumi</h2>
@@ -65,7 +67,9 @@
 
       <!-- Producto 2 -->
       <article class="cart-item">
-        <img src="../images/white.png" alt="HIROTA Tsubasa" class="cart-item-img">
+        <div class="cart-item-img-wrapper">
+          <img src="../images/white.png" alt="HIROTA Tsubasa" class="cart-item-img">
+        </div>
 
         <div class="cart-item-info">
           <h2 class="cart-item-title">HIROTA Tsubasa</h2>
@@ -86,7 +90,9 @@
 
       <!-- Producto 3 -->
       <article class="cart-item">
-        <img src="../images/white.png" alt="HIROTA B-503" class="cart-item-img">
+        <div class="cart-item-img-wrapper">
+          <img src="../images/white.png" alt="HIROTA B-503" class="cart-item-img">
+        </div>
 
         <div class="cart-item-info">
           <h2 class="cart-item-title">HIROTA B-503</h2>
@@ -110,15 +116,15 @@
     <!-- Subtotal -->
     <section class="cart-summary">
       <p class="cart-subtotal">
-        <strong>SUBTOTAL</strong> 
-        <span class="cart-note">(shipping costs calculated at checkout)</span>
+        <span class="cart-subtotal-title">SUBTOTAL</span> 
+        <span class="cart-subtotal-note">(shipping costs calculated at checkout)</span>
       </p>
-      <p class="cart-total-price">USD $532</p>
+      <p class="cart-subtotal-price">USD $532</p>
     </section>
 
     <!-- Checkout -->
     <section class="cart-checkout">
-      <button class="btn-proceed">Proceed to Checkout</button>
+      <button class="btn-checkout">CHECKOUT</button>
     </section>
 
   </main>
