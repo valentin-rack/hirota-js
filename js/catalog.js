@@ -26,3 +26,37 @@ products.forEach(product => {
   `;
   productList.appendChild(li);
 });
+
+
+
+// ===== ADD TO CART =====
+
+// Inicializamos el carrito desde localStorage (o vacío)
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+// Seleccionamos todos los botones "Add to Cart"
+const addButtons = document.querySelectorAll(".btn-add");
+
+// Escuchamos cada click en los botones
+addButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const productId = parseInt(button.dataset.id); // obtenemos el id del producto
+    const productToAdd = products.find(p => p.id === productId); // lo buscamos con un find()
+
+    if (productToAdd) {
+      // Verificamos si ya está en el carrito
+      const existingItem = cart.find(item => item.id === productId);
+      if (existingItem) {
+        existingItem.quantity += 1; // si ya está, aumentamos cantidad
+      } else {
+        cart.push({ ...productToAdd, quantity: 1 }); // si no, lo agregamos
+      }
+
+      // Guardamos en localStorage
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      // Confirmación opcional (visual o alert)
+      alert(`${productToAdd.name} added to cart!`);
+    }
+  });
+});
