@@ -72,6 +72,9 @@ function activateRemoveButtons() {
 
       // Re-renderizamos el carrito
       renderCart();
+
+      // Actualizo el CART COUNT
+      if (window.updateCartCount) updateCartCount();
     });
   });
 }
@@ -88,6 +91,9 @@ if (clearBtn) {
       cart = [];
       localStorage.setItem("cart", JSON.stringify(cart));
       renderCart();
+
+      // Actualizo el CART COUNT
+      if (window.updateCartCount) updateCartCount();
     }
   });
 }
@@ -122,6 +128,9 @@ function activateQuantityButtons() {
       // Actualizar la cantidad visible y el subtotal
       article.querySelector(".qty-value").textContent = item.quantity;
       updateSubtotal();
+
+      // Actualizo el CART COUNT
+      if (window.updateCartCount) updateCartCount();
     });
   });
 }

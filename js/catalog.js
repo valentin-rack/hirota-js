@@ -55,8 +55,19 @@ addButtons.forEach(button => {
       // Guardamos en localStorage
       localStorage.setItem("cart", JSON.stringify(cart));
 
-      // Confirmación opcional (visual o alert)
-      alert(`${productToAdd.name} added to cart!`);
+      // Actualizo el CART COUNT
+      if (window.updateCartCount) updateCartCount();
+
+      // ===== FEEDBACK VISUAL CART DOT =====
+      const cartLink = document.getElementById("cart-link");
+      if (cartLink) {
+        const dot = document.createElement("span");
+        dot.classList.add("cart-ping");
+        cartLink.parentElement.appendChild(dot);
+
+        // eliminar el dot después de la animación
+        setTimeout(() => dot.remove(), 600);
+      }
     }
   });
 });

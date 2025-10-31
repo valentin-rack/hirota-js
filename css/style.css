@@ -591,6 +591,34 @@ main {
 
 
 
+/* ===== CART FEEDBACK DOT ===== */
+.cart-ping {
+  position: absolute;
+  top: 5px;
+  right: 70px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-hirota-red);
+  border-radius: 50%;
+  opacity: 0;
+  animation: cartPing 1.2s ease-out forwards; 
+}
+
+@keyframes cartPing {
+  0%   { opacity: 0; }   
+  15%  { opacity: 1; }   
+  40%  { opacity: 1; }   
+  100% { opacity: 0; }   
+}
+
+/* Asegura que el contenedor del cart link permita posicionar el dot */
+.nav-right {
+  position: relative;
+  display: inline-block;
+}
+
+
+
 
 /* ==================== [ MOUSE FALLING ASCII ] ==================== */
 /* .falling-symbol {
