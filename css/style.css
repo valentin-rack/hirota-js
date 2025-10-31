@@ -44,8 +44,6 @@
   /* ====== COMPONENTS ====== */
   /* Nav-bar */
   --nav-bar-height: 34px;
-  --nav-bar-color: rgba(255, 255, 255, 0.7);
-  --nav-bar-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   --nav-bar-logo-height: 22px;
 
   /* Main-cart*/
@@ -81,12 +79,16 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+    /* Gradiente estático */
+  background: linear-gradient(135deg, var(--color-gradient) 0%, #ffffff 100%);
+  background-attachment: fixed; 
+  background-repeat: no-repeat;
+  background-size: cover;
   /* Gradiente animado */
   /* background: linear-gradient(135deg, var(--color-gradient), var(--color-white), var(--color-gradient));
   background-size: 300% 300%;
   animation: gradientMove 8s ease-in-out infinite; */
 }
-
 @keyframes gradientMove {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
@@ -101,12 +103,13 @@ main {
 
 
 
+
 /* ==================== [ NAV-BAR ] ==================== */ 
 /* #region NAVBAR */
 .navbar {
   height: var(--nav-bar-height);
-  background-color: var(--nav-bar-color);
-  box-shadow: var(--nav-bar-shadow);
+  background-color: rgba(255, 255, 255, 0.7); 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 0;
   width: 100%;
@@ -115,7 +118,12 @@ main {
   align-items: center;
   padding: 0 20px;
   z-index: 10;
+
+  
 }
+
+
+
 
 /* Zonas izquierda, centro y derecha */
 .nav-left,
