@@ -1,22 +1,39 @@
-// ====== CART RENDER & ACTIONS ======
+// ====== CART JS ======
 
 // Obtenemos el carrito desde localStorage
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// Contenedor principal de los ítems
+// Elementos del DOM
 const cartContainer = document.querySelector(".cart-items");
-const clearBtn = document.querySelector(".btn-clear"); // NUEVO: botón "Clear all"
+const clearBtn = document.querySelector(".btn-clear");
+const subtotalSection = document.querySelector(".cart-summary");
+const checkoutSection = document.querySelector(".cart-checkout");
+const subtotalPrice = document.querySelector(".cart-subtotal-price");
 
-// Función principal para renderizar el carrito
+
+// ====== RENDER CART ======
 function renderCart() {
   cartContainer.innerHTML = ""; // limpiamos el contenedor
 
+  // Si no hay productos
   if (cart.length === 0) {
     cartContainer.innerHTML = "<p>Your cart is empty.</p>";
-    updateSubtotal();
+
+    // ocultamos subtotal y checkout
+    subtotalSection.style.display = "none";
+    checkoutSection.style.display = "none";
+
+    // actualizamos contador si existe
+    if (window.updateCartCount) updateCartCount();
+
     return;
   }
 
+  // Si hay productos, mostramos subtotal y checkout
+  subtotalSection.style.display = "";
+  checkoutSection.style.display = "block";
+
+  // Renderizar cada ítem
   cart.forEach(item => {
     const article = document.createElement("article");
     article.classList.add("cart-item");
@@ -46,11 +63,8 @@ function renderCart() {
     cartContainer.appendChild(article);
   });
 
-  // Activamos los botones de acción
   activateRemoveButtons();
   activateQuantityButtons();
-
-  // Actualizamos subtotal
   updateSubtotal();
 }
 
@@ -64,16 +78,10 @@ function activateRemoveButtons() {
     button.addEventListener("click", () => {
       const idToRemove = parseInt(button.dataset.id);
 
-      // Filtramos el carrito dejando afuera el producto seleccionado
       cart = cart.filter(item => item.id !== idToRemove);
-
-      // Actualizamos localStorage
       localStorage.setItem("cart", JSON.stringify(cart));
-
-      // Re-renderizamos el carrito
       renderCart();
 
-      // Actualizo el CART COUNT
       if (window.updateCartCount) updateCartCount();
     });
   });
@@ -84,17 +92,13 @@ function activateRemoveButtons() {
 // ====== CLEAR ALL ======
 if (clearBtn) {
   clearBtn.addEventListener("click", () => {
-    if (cart.length === 0) return; // si ya está vacío, no hace nada
+    if (cart.length === 0) return;
 
-    const confirmClear = confirm("Are you sure you want to clear the entire cart?");
-    if (confirmClear) {
-      cart = [];
-      localStorage.setItem("cart", JSON.stringify(cart));
-      renderCart();
+    cart = [];
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCart();
 
-      // Actualizo el CART COUNT
-      if (window.updateCartCount) updateCartCount();
-    }
+    if (window.updateCartCount) updateCartCount();
   });
 }
 
@@ -106,30 +110,23 @@ function activateQuantityButtons() {
 
   qtyButtons.forEach(button => {
     button.addEventListener("click", () => {
-      // Identificar el producto asociado
       const article = button.closest(".cart-item");
       const id = parseInt(article.querySelector(".btn-remove").dataset.id);
       const item = cart.find(p => p.id === id);
+
       if (!item) return;
 
-      // Detectar si el botón fue "+" o "−"
-      const isIncrement = button.textContent.trim() === "+";
-      const isDecrement = button.textContent.trim() === "−";
-
-      if (isIncrement) {
-        item.quantity += 1;
-      } else if (isDecrement && item.quantity > 1) {
-        item.quantity -= 1;
+      if (button.textContent.trim() === "+") {
+        item.quantity++;
+      } else if (button.textContent.trim() === "−" && item.quantity > 1) {
+        item.quantity--;
       }
 
-      // Guardar cambios
       localStorage.setItem("cart", JSON.stringify(cart));
-
-      // Actualizar la cantidad visible y el subtotal
       article.querySelector(".qty-value").textContent = item.quantity;
+
       updateSubtotal();
 
-      // Actualizo el CART COUNT
       if (window.updateCartCount) updateCartCount();
     });
   });
@@ -139,17 +136,16 @@ function activateQuantityButtons() {
 
 // ====== SUBTOTAL ======
 function updateSubtotal() {
-  const subtotalElem = document.querySelector(".cart-subtotal-price");
   let total = 0;
 
   cart.forEach(item => {
     total += item.price * item.quantity;
   });
 
-  subtotalElem.textContent = `USD $${total}`;
+  subtotalPrice.innerText = `USD $${total}`;
 }
 
 
 
-// ====== INICIALIZACIÓN ======
+// ====== INIT ======
 renderCart();
