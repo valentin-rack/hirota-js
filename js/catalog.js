@@ -108,6 +108,5 @@ function activateAddToCartButtons() {
 // Cuando loadProducts() termine, llamará a renderProducts()
 
 
-// MUY IMPORTANTE: NUNCA LLAMES A renderProducts() AQUÍ
 // se ejecutará automáticamente cuando loadProducts() lo invoque desde products.js
 

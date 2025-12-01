@@ -5,7 +5,7 @@
     "description": "65% polyester / 35% cotton, 12 oz. | kata karate-gi",
     "category": "karate-gi",
     "price": 260,
-    "image": "../images/white.png"
+    "image": "../images/hirota-karate-gi-1.jpg"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "description": "95% polyester / 5% elasthan | kumite karate-gi",
     "category": "karate-gi",
     "price": 212,
-    "image": "../images/white.png"
+    "image": "../images/hirota-karate-gi-2.jpg"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "description": "65 % cotton / 35 % polyester, 7,5 oz. | kumite karate-gi",
     "category": "karate-gi",
     "price": 212,
-    "image": "../images/white.png"
+    "image": "../images/hirota-karate-gi-3.jpg"
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "description": "70 % cotton / 30 % polyester, 13 oz. | kata karate-gi",
     "category": "karate-gi",
     "price": 212,
-    "image": "../images/white.png"
+    "image": "../images/hirota-karate-gi-1.jpg"
   },
   {
     "id": 5,
@@ -37,7 +37,7 @@
     "description": "70 % cotton / 30 % polyester, 11 oz. | kumite karate-gi",
     "category": "karate-gi",
     "price": 212,
-    "image": "../images/white.png"
+    "image": "../images/hirota-karate-gi-2.jpg"
   },
   {
     "id": 6,
@@ -45,7 +45,7 @@
     "description": "100 % cotton, 7.9 oz. | kumite karate-gi",
     "category": "karate-gi",
     "price": 212,
-    "image": "../images/white.png"
+    "image": "../images/hirota-karate-gi-3.jpg"
   },
   {
     "id": 7,
@@ -53,7 +53,7 @@
     "description": "100 % cotton, 12 oz. | all-round karate-gi",
     "category": "karate-gi",
     "price": 212,
-    "image": "../images/white.png"
+    "image": "../images/hirota-karate-gi-1.jpg"
   },
   {
     "id": 8,
@@ -61,7 +61,7 @@
     "description": "100 % cotton, 14 oz. | kata karate-gi",
     "category": "karate-gi",
     "price": 212,
-    "image": "../images/white.png"
+    "image": "../images/hirota-karate-gi-1.jpg"
   },
   {
     "id": 9,
@@ -69,7 +69,7 @@
     "description": "100% cotton, 4.5 cm width | cotton kuro-obi",
     "category": "obi",
     "price": 60,
-    "image": "../images/white.png"
+    "image": "../images/hirota-B-503.jpg"
   },
   {
     "id": 10,
@@ -77,6 +77,6 @@
     "description": "100% silk outer, 4.5 cm width | silk kuro-obi",
     "category": "obi",
     "price": 110,
-    "image": "../images/white.png"
+    "image": "../images/hirota-B-602.jpg"
   }
 ]
