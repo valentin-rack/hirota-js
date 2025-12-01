@@ -161,7 +161,7 @@ if (checkoutBtn) {
 
     // Mostrar mensaje inicial con contador
     cartContainer.innerHTML = `
-      <h2 class="checkout-message">Thanks for buying! (${seconds}s)</h2>
+      <h2 class="checkout-message">Thanks for buying! ありがとうございました (${seconds}s)</h2>
     `;
 
     // Ocultar subtotal y checkout
@@ -177,7 +177,7 @@ if (checkoutBtn) {
     // ====== CONTADOR REGRESIVO ======
     const interval = setInterval(() => {
       seconds--;
-      messageElem.textContent = `Thanks for buying! (${seconds}s)`;
+      messageElem.textContent = `Thanks for buying! ありがとうございました (${seconds}s)`;
 
       if (seconds === 0) {
         clearInterval(interval);
