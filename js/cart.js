@@ -9,6 +9,7 @@ const clearBtn = document.querySelector(".btn-clear");
 const subtotalSection = document.querySelector(".cart-summary");
 const checkoutSection = document.querySelector(".cart-checkout");
 const subtotalPrice = document.querySelector(".cart-subtotal-price");
+const checkoutBtn = document.querySelector(".btn-checkout");
 
 
 // ====== RENDER CART ======
@@ -17,7 +18,7 @@ function renderCart() {
 
   // Si no hay productos
   if (cart.length === 0) {
-    cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+    cartContainer.innerHTML = "<p>Your cart is empty :(</p>";
 
     // ocultamos subtotal y checkout
     subtotalSection.style.display = "none";
@@ -143,6 +144,47 @@ function updateSubtotal() {
   });
 
   subtotalPrice.innerText = `USD $${total}`;
+}
+
+
+
+// ====== CHECKOUT ======
+if (checkoutBtn) {
+  checkoutBtn.addEventListener("click", () => {
+    if (cart.length === 0) return; // si no hay productos, no hace nada
+
+    // Vaciar carrito
+    cart = [];
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    let seconds = 3; // duración del contador
+
+    // Mostrar mensaje inicial con contador
+    cartContainer.innerHTML = `
+      <h2 class="checkout-message">Thanks for buying! (${seconds}s)</h2>
+    `;
+
+    // Ocultar subtotal y checkout
+    subtotalSection.style.display = "none";
+    checkoutSection.style.display = "none";
+
+    // Actualizar count global
+    if (window.updateCartCount) updateCartCount();
+
+    // Referencia al elemento del mensaje
+    const messageElem = document.querySelector(".checkout-message");
+
+    // ====== CONTADOR REGRESIVO ======
+    const interval = setInterval(() => {
+      seconds--;
+      messageElem.textContent = `Thanks for buying! (${seconds}s)`;
+
+      if (seconds === 0) {
+        clearInterval(interval);
+        location.reload(); // recarga la página
+      }
+    }, 1000);
+  });
 }
 
 

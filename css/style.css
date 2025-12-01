@@ -531,6 +531,13 @@ main {
   border-color: var(--btn-border-hover-intense);
   font-weight: 700;
 } 
+.checkout-message {
+  text-align: left;
+  font-family: var(--font-sans);
+  font-stretch: condensed;
+  font-size: 16px;
+  font-weight: 400;
+}
 /* #endregion */
 
 
