@@ -58,7 +58,23 @@ addButtons.forEach(button => {
       // Actualizo el CART COUNT
       if (window.updateCartCount) updateCartCount();
 
-      // ===== FEEDBACK VISUAL CART DOT =====
+      // ===== TOASTIFY FEEDBACK =====
+      Toastify({
+        text: "Product added!",
+        duration: 2500,
+        close: true,
+        gravity: "bottom",
+        position: "right",
+        stopOnFocus: true,
+        style: {
+          background: "rgba(255, 60, 60, 0.8)",
+          color: "#fff",
+          borderRadius: "6px",
+          fontFamily: "Consolas, monospace",
+        }
+      }).showToast();
+
+      // ===== CART DOT ANIMATION =====
       const cartLink = document.getElementById("cart-link");
       if (cartLink) {
         const dot = document.createElement("span");
