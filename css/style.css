@@ -542,6 +542,75 @@ main {
 
 
 
+/* ==================== [ MAIN-HOME] ==================== */
+/* #region MAIN-HOME */
+.main-home {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: calc(var(--nav-bar-height) + 40px);
+  gap: 32px;
+}
+
+/* HERO TEXT */
+.hero-title {
+  font-family: var(--font-sans);
+  font-stretch: condensed;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-light);
+  letter-spacing: 1px;
+}
+
+.hero-subtitle {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--color-light);
+  margin-top: 6px;
+}
+
+/* HERO IMAGE */
+.gi-image {
+  width: 250px;
+  max-width: 100%;
+  opacity: .85;
+  display: block;
+}
+
+/* CTA BUTTON */
+.hero-cta {
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+
+.btn-cta {
+  font-family: var(--font-sans);
+  font-stretch: condensed;
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  color: var(--color-light);
+  background: transparent;
+  padding: 12px 32px;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.2s ease;
+  border: var(--btn-border);
+}
+
+.btn-cta:hover {
+  color: var(--color-white);
+  background: var(--color-light);
+  opacity: .8;
+}
+/* #endregion */
+
+
+
+
 
 /* ==================== [ MAIN-ABOUT] ==================== */
 /* #region MAIN-ABOUT */
