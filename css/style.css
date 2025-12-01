@@ -542,6 +542,92 @@ main {
 
 
 
+/* ==================== [ MAIN-CONTACT ] ==================== */
+/* #region MAIN-CONTACT */
+.main-contact {
+  flex: 1;                       
+  display: flex;
+  flex-direction: column;
+  align-items: center;          
+  text-align: center;
+  padding: calc(40px + var(--nav-bar-height)) 40px 40px;      
+}
+
+/* Contact header */
+.contact-header {
+  max-width: var(--cart-max-width);
+  border-bottom: var(--card-border);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2px;
+}
+.contact-header h1 {
+  color: var(--color-bold);
+  font-size: var(--font-size-h1);
+  font-family: var(--font-sans);
+  font-stretch: condensed;
+  font-weight: 700;
+}
+.contact-header p {
+  font-family: var(--font-mono);
+  color: var(--color-light);
+  font-size: var(--font-size-p);
+}
+
+/* ========== CONTACT — COMPANY INFO ========== */
+.contact-company {
+  max-width: var(--cart-max-width);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 30px;
+  text-align: left;
+}
+.company-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.contact-company p {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  color: var(--color-light);
+  line-height: 1.25;
+}
+.company-branch h2 {
+  font-family: var(--font-mono);
+  font-stretch: condensed;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--color-bold);
+}
+.branch-contact {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  margin: 4px 0;
+}
+.branch-email {
+  text-decoration: underline;
+  cursor: pointer;
+  color: var(--color-bold);
+}
+.branch-email:hover {
+  color: rgb(55, 162, 255);
+}
+.company-info-extra p:first-child {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  margin-bottom: 4px;
+  color: var(--color-bold);
+}
+/* #endregion */
+
+
 
 
 /* ==================== [ FOOTER ] ==================== */
