@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "HIROTA Takumi",
+    "description": "65% polyester / 35% cotton, 12 oz. | kata karate-gi",
+    "category": "karate-gi",
+    "price": 260,
+    "image": "../images/white.png"
+  },
+  {
+    "id": 2,
+    "name": "HIROTA Tsubasa",
+    "description": "95% polyester / 5% elasthan | kumite karate-gi",
+    "category": "karate-gi",
+    "price": 212,
+    "image": "../images/white.png"
+  },
+  {
+    "id": 3,
+    "name": "HIROTA Kū",
+    "description": "65 % cotton / 35 % polyester, 7,5 oz. | kumite karate-gi",
+    "category": "karate-gi",
+    "price": 212,
+    "image": "../images/white.png"
+  },
+  {
+    "id": 4,
+    "name": "HIROTA Pinac-kata",
+    "description": "70 % cotton / 30 % polyester, 13 oz. | kata karate-gi",
+    "category": "karate-gi",
+    "price": 212,
+    "image": "../images/white.png"
+  },
+  {
+    "id": 5,
+    "name": "HIROTA Pinac-kumite",
+    "description": "70 % cotton / 30 % polyester, 11 oz. | kumite karate-gi",
+    "category": "karate-gi",
+    "price": 212,
+    "image": "../images/white.png"
+  },
+  {
+    "id": 6,
+    "name": "HIROTA MH-12",
+    "description": "100 % cotton, 7.9 oz. | kumite karate-gi",
+    "category": "karate-gi",
+    "price": 212,
+    "image": "../images/white.png"
+  },
+  {
+    "id": 7,
+    "name": "HIROTA MH-11",
+    "description": "100 % cotton, 12 oz. | all-round karate-gi",
+    "category": "karate-gi",
+    "price": 212,
+    "image": "../images/white.png"
+  },
+  {
+    "id": 8,
+    "name": "HIROTA MH-10",
+    "description": "100 % cotton, 14 oz. | kata karate-gi",
+    "category": "karate-gi",
+    "price": 212,
+    "image": "../images/white.png"
+  },
+  {
+    "id": 9,
+    "name": "HIROTA B-503",
+    "description": "100% cotton, 4.5 cm width | cotton kuro-obi",
+    "category": "obi",
+    "price": 60,
+    "image": "../images/white.png"
+  },
+  {
+    "id": 10,
+    "name": "HIROTA B-602",
+    "description": "100% silk outer, 4.5 cm width | silk kuro-obi",
+    "category": "obi",
+    "price": 110,
+    "image": "../images/white.png"
+  }
+]
