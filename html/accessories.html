@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HIROTA</title>
+  <link rel="icon" type="image/svg+xml" href="../images/hirota_symb_blue.svg">
+  <link rel="stylesheet" href="../css/output.css">
+  <link rel="stylesheet" href="https://use.typekit.net/qtw5ydf.css">
+</head>
+
+<body class="theme-skyblue">
+
+  <!-- ===== TOP BAR ===== -->
+  <header class="fixed top-0 left-0 w-full h-[26px] border-y border-neutral-500 bg-white z-50 flex items-center justify-between px-2 pb-[1px] select-none">
+    <img src="../images/hirota-logo-空手衣のヒロタ.svg" alt="HIROTA Logo" class="h-[22px] object-contain object-center"/>
+
+    <!-- THEME DOTS -->
+    <div class="flex items-center gap-1">
+      <div id="theme-skyblue" class="w-[12px] h-[12px] rounded-full border border-neutral-500 bg-[#BAE8FD] cursor-pointer"></div>
+      <div id="theme-red" class="w-[12px] h-[12px] rounded-full border border-neutral-500 bg-[#E21E20] cursor-pointer"></div>
+      <div class="w-[12px] h-[12px] rounded-full border border-neutral-500 bg-[#3F5BA6] cursor-pointer"></div>
+    </div>
+  </header>
+
+
+
+  <!-- ===== MAIN ===== -->
+  <main class="mt-[26px] h-[calc(100vh-26px)] flex overflow-hidden">
+
+    <!-- ===== COLUMN 1 — LOGO & VERTICAL BRAND ===== -->
+    <section class="basis-[7.5%] border-r border-neutral-400 overflow-hidden flex items-center justify-center">
+      <img src="../images/hirota_logo_unflavored_vertical.svg" alt="HIROTA Vertical Logo" class="h-[85vh] opacity-50"/>
+    </section>
+
+
+    <!-- ===== COLUMN 2 — COMPANY INFO ===== -->
+    <section class="basis-[20%] border-r border-neutral-400 overflow-y-auto scrollbar-none">
+      <!-- hirota title -->
+      <div class="sticky top-0 z-10 h-[26px] flex items-center px-1.5 border-b border-neutral-400 text-sm leading-none backdrop-blur-xs">hirota</div>
+      <!-- hirota company information -->
+      <div class="mt-2 mx-1.5 text-xs leading-tight">
+        <!-- introduction -->
+        <img src="../images/hirota_logo_unflavored_simp.svg" alt="HIROTA Logo Simplified" class="inline opacity-50 h-[18px] align-baseline"/>
+        <span class="ml-0.5">is a Japanese manufacturing house specializing in premium karate-gi and karate equipment.</span>
+        <p class="mt-2">
+          Founded in 1965, the company has established a long-standing reputation for precision craftsmanship, material excellence, and uncompromising quality. HIROTA uniforms are trusted and worn by masters, instructors, and elite competitors at the highest levels of traditional and competitive karate worldwide.
+        </p>
+        <!-- 空手衣のヒロタ -->
+        <div id="storeSymbol" class="mx-1.5 my-3 relative cursor-pointer select-none">
+          <img src="../images/empty-空手衣のヒロタ.svg" alt="Karate-Gi no Hirota" class="w-full opacity-50 hover:opacity-75 cursor-pointer hover:scale-[1.03] previewable" data-preview="../images/hirota_store.png"/>
+        </div>
+        <!-- tokyo head office -->
+        <div>
+          <p class="font-bold">東京本社 Tokyo Head Office</p>
+          <p>NS Bldg. 1F, 5-33-6 Kamata, Ohta-ku, Tokyo 144-0052, Japan.</p>
+          <div class="flex justify-between">
+            <span>TEL(03)3730-5366</span>
+            <span>FAX(03)3730-5336</span>
+          </div>
+          <span class="underline cursor-pointer hover:text-[#5e8fff]">tokyo@karategi-hirota.co.jp</span>
+          <p>Business Hours:</p>
+          <ul class="list-disc list-inside">
+            <li>Monday–Friday: 9:00–18:00</li>
+            <li>Saturday: 9:00–17:00</li>
+            <li>Sunday, National Holidays, and 2nd Saturday of each month: Closed</li>
+          </ul>
+        </div>
+        <!-- fukoka branch -->
+        <div class="mt-6">
+          <p class="font-bold">福岡支店 Fukuoka Branch</p>
+          <p>4-2-15 Sumiyon Bldg., Sumiyoshi, Hakata-ku, Fukuoka City 812-0018, Japan.</p>
+          <div class="flex justify-between">
+            <span>TEL(092)475-1810</span>
+            <span>FAX(092)475-1817</span>
+          </div>
+          <span class="underline cursor-pointer hover:text-[#5e8fff]">fukuoka@karategi-hirota.co.jp</span>
+          <p>Business Hours:</p>
+          <ul class="list-disc list-inside">
+            <li>Monday–Friday: 9:00–18:00</li>
+            <li>Saturday: 9:00–17:00</li>
+            <li>Sunday, National Holidays, and 2nd Saturday of each month: Closed</li>
+          </ul>
+        </div>
+        <!-- aichi factory -->
+        <div class="mt-6">
+          <p class="font-bold">愛知工場 Aichi Factory</p>
+          <p>16-3 Rendai, Yonezu-cho, Nishio City, Aichi 445-0802, Japan.</p>
+          <div class="flex justify-between">
+            <span>TEL(0563)54-3600</span>
+            <span>FAX(0563)54-5822</span>
+          </div>
+        </div>
+        <!-- store visit & measurement appointments -->
+        <div class="mt-8">
+          <p><span class="uppercase">※ About store visit & measurement appointments</span>:</p>
+          <p>To ensure proper attention and accurate measurement, please make a reservation before visiting any HIROTA location. Please call the branch you plan to visit and make a reservation in advance.</p>
+          <p class="mt-2">If you would like to have your karate-gi measurements taken, please inform us of your height, weight, and preferred fabric type when booking. For measurement sessions, please wear or bring a T-shirt and tight-fitting bottoms (such as spats) to ensure accurate fitting.</p>
+          <p class="mt-2">If you visit without a reservation or during busy periods with many appointments, we may not be able to assist you. Please make sure to book your visit in advance.</p>
+        </div>
+      </div>
+      <!-- local footer -->
+      <div class="mt-8 mb-2 flex flex-col items-center select-none">
+        <img src="../images/hirota-footer-logo.svg" alt="HIROTA Footer Logo" class="w-[97%] opacity-50"/>
+        <p class="w-[97%] text-center tracking-wider text-black/35" style="font-size: clamp(9px, 0.7vw, 12px);">© <span id="footerYear"></span> HIROTA CO., LTD. All Rights Reserved.</p>
+      </div>
+    </section>
+
+
+    <!-- ===== COLUMN 3 — SHOP ===== -->
+    <section class="basis-[45%] border-r border-neutral-400 overflow-y-auto scrollbar-none">
+      <!-- shop title -->
+      <div class="sticky top-0 z-10 h-[26px] flex items-center px-1.5 border-b border-neutral-400 text-sm leading-none backdrop-blur-xs">shop</div>
+      <!-- shop navigation links -->
+      <div>
+        <nav id="shop-nav" class="flex flex-col items-baseline gap-1 p-1.5 pb-3 text-2xl leading-none">
+          <a href="karate-gi.html" class="hover:opacity-60">karate-gi</a>
+          <a href="obi.html" class="hover:opacity-60">obi</a>
+          <a href="equipment.html" class="hover:opacity-60">equipment</a>
+          <a href="accessories.html" class="hover:opacity-60">accessories</a>
+        </nav>
+        <!-- products title -->
+        <div class="h-[26px] flex items-center px-1.5 border-b border-neutral-400 text-sm leading-none backdrop-blur-xs">products / accessories</div>
+ 
+        <!-- products / obi -->
+        <div class="flex w-full">
+
+        <h1 class="px-1.5 py-1 text-sm text-red-500">section under construction...</h1>
+
+
+
+    </section>
+
+
+    <!-- ===== COLUMN 4 — CART ===== -->
+    <section class="basis-[27.5%] overflow-y-auto scrollbar-none">
+      <!-- cart title -->
+      <div class="sticky top-0 z-10 h-[26px] flex items-center px-1.5 border-b border-neutral-400 text-sm leading-none backdrop-blur-xs">cart</div>
+      <!-- cart items -->
+      <div class="mt-2 mx-1.5 text-xs leading-tight">
+        <p>Your cart is empty :(</p>
+      </div>
+    </section>
+
+  </main>
+
+
+
+  <!-- ===== Global Image Preview ===== -->
+  <div id="imagePreviewContainer" class="hidden fixed bottom-4 right-4 w-[260px] bg-white/70 shadow-md border border-black/50 z-50 select-none">
+    <img id="imagePreview" src="" alt="Preview" class="w-full h-auto opacity-90 object-contain"/>
+  </div>
+
+
+  <!-- ===== Links a js ===== -->
+  <script src="../js/main.js"></script>
+
+
+</body>
+</html>

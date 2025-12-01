@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+
+/* ================================================================= */
+/* ========================= GLOBAL STYLES ========================= */
+/* ================================================================= */
+
+@layer base {
+  body {
+    @apply font-['consolas'];
+    @apply text-black/50;
+  }
+
+  body.theme-skyblue {
+    background: linear-gradient(135deg, #b3e5fc, #ffffff, #b3e5fc);
+    background-size: 300% 300%;
+    animation: gradientMove 8s ease-in-out infinite;
+  }
+
+  body.theme-red {
+    background: linear-gradient(135deg, #ffffff, #ffe5e5, #ffffff);
+    background-size: 300% 300%;
+    animation: gradientMove 8s ease-in-out infinite;
+  }
+
+  @keyframes gradientMove {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  ::selection {
+    @apply bg-neutral-700;
+    @apply text-white;            
+  }
+
+  a.active-link {
+    @apply underline underline-offset-2 decoration-2;
+  }
+}
+
+
+/* ===== NO SCROLL-BARS, E-MAILS HOVER ===== */
+@layer utilities {
+  .scrollbar-none {
+    scrollbar-width: none;          /* Firefox */
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;                  /* Chrome, Safari, Edge */
+  }
+}
+
+
+
+
+/* ================================================================= */
+/* ======================== PRODUCTS STYLES ======================== */
+/* ================================================================= */
+
+
+/* ==================== PRODUCTS / INPUTS ==================== */
+/* Quitar flechitas ↑↓ de los inputs */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* HOVER (solo si NO está marcada como completed) */
+.karate-input-row:not(.completed):hover,
+.karate-input-row:not(.completed):focus-within {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* completed state */
+.karate-input-row.completed {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.karate-input-row.completed .input-text,
+.karate-input-row.completed .karate-input {
+  color: white !important;
+}
+
+
+/* =============== PRODUCTS / KARATE-GI MODEL SELECTION =============== */
+.karate-gi-option:not(.selected):hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.karate-gi-option:not(.selected):hover .inner-circle {
+  display: block; /* aparece en hover */
+  background-color: rgba(0,0,0,0.5);
+}
+
+
+/* =============== PRODUCTS / HIGH-WAIST (OPTIONAL) SELECTION =============== */
+
+
+
+/* =============== PRODUCTS / SHRINKAGE SELECTION =============== */
+.karate-shrink-option:not(.selected):hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.karate-shrink-option:not(.selected):hover .inner-circle {
+  display: block; /* aparece en hover */
+  background-color: rgba(0,0,0,0.5);
+}
+
+
+/* =============== PRODUCTS / HEMS SELECTION =============== */
+.karate-hems-option:not(.selected):hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.karate-hems-option:not(.selected):hover .inner-circle {
+  display: block; /* aparece en hover */
+  background-color: rgba(0,0,0,0.5);
+}

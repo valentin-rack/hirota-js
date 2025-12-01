@@ -1,70 +1,65 @@
-// Detecta el archivo actual y marca el link "active"
-document.querySelectorAll('.nav-left a, .nav-right a').forEach(link => {
-  if (link.href === window.location.href) {
-    link.classList.add('active');
+// ----------------------------------------------------------- //
+// ------------------ THEMES & OTHER CONFIG ------------------ //
+// ----------------------------------------------------------- //
+
+// THEME DOTS LOGIC
+const body = document.body;
+
+document.getElementById("theme-skyblue").addEventListener("click", () => {
+  body.classList.remove("theme-red");
+  body.classList.add("theme-skyblue");
+});
+
+document.getElementById("theme-red").addEventListener("click", () => {
+  body.classList.remove("theme-skyblue");
+  body.classList.add("theme-red");
+});
+
+// ACTIVE SHOP-NAV LINKS
+const currentPage = location.pathname.split("/").pop();
+
+document.querySelectorAll("#shop-nav a").forEach(link => {
+  if (link.getAttribute("href") === currentPage) {
+    link.classList.add("active-link");
   }
 });
 
-// Detecta el año actual para el copyright del footer
-document.addEventListener("DOMContentLoaded", () => {
-  const yearSpan = document.getElementById("year");
-  if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-  }
+// FOOTER DYNAMIC YEAR
+document.getElementById("footerYear").textContent = new Date().getFullYear();
+
+
+
+
+// ----------------------------------------------------------- //
+// ---------------------- IMAGE PREVIEW ---------------------- //
+// ----------------------------------------------------------- //
+
+const previewContainer = document.getElementById("imagePreviewContainer");
+const previewImage = document.getElementById("imagePreview");
+
+// detectar hover en cualquier item con .previewable
+document.querySelectorAll(".previewable").forEach(item => {
+
+  item.addEventListener("mouseenter", () => {
+    const imgPath = item.dataset.preview;
+    previewImage.src = imgPath;
+    previewContainer.classList.remove("hidden");
+  });
+
+  item.addEventListener("mouseleave", () => {
+    previewContainer.classList.add("hidden");
+    previewImage.src = "";
+  });
+
 });
 
+// click → open image in a new tab
+document.querySelectorAll('.previewable').forEach(el => {
+  el.addEventListener('click', (e) => {
+    const imgSrc = el.getAttribute('data-preview');
 
-
-// ===== UPDATE CART COUNT GLOBALLY =====
-
-// Función que actualiza el número de ítems en el enlace del carrito
-function updateCartCount() {
-  const cartLink = document.getElementById("cart-link");
-  const cartHeader = document.querySelector(".cart-header h1"); // header del carrito
-
-  // Si no existe ni navbar ni header, no hacemos nada
-  if (!cartLink && !cartHeader) return;
-
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  // Calculamos la cantidad total de unidades (sumando las quantities)
-  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-
-  // Actualizamos el texto del link en el navbar
-  if (cartLink) {
-    cartLink.textContent = `Cart (${totalItems})`;
-  }
-
-  // Actualizamos el header del carrito si existe
-  if (cartHeader) {
-    cartHeader.textContent = `CART (${totalItems})`;
-  }
-}
-
-// Ejecutar apenas se carga la página
-document.addEventListener("DOMContentLoaded", updateCartCount);
-
-// Hacer disponible la función globalmente (para usarla desde otros scripts)
-window.updateCartCount = updateCartCount;
-
-
-
-
-// Mouse ASCII symbol trial effect
-// document.addEventListener("mousemove", (e) => {
-//   createFallingSymbol(e.clientX, e.clientY);
-// });
-
-// function createFallingSymbol(x, y) {
-//   const symbol = document.createElement("span");
-//   symbol.textContent = "+";
-//   symbol.classList.add("falling-symbol");
-//   symbol.style.left = `${x}px`;
-//   symbol.style.top = `${y}px`;
-//   document.body.appendChild(symbol);
-
-//   // Eliminamos el símbolo tras la animación
-//   setTimeout(() => {
-//     symbol.remove();
-//   }, 1500);
-// }
+    if (imgSrc) {
+      window.open(imgSrc, '_blank');
+    }
+  });
+});
