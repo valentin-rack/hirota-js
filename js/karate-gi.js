@@ -68,7 +68,53 @@ document.querySelectorAll(".karate-gi-option").forEach(option => {
 
 
 // -------------- SELECTIONS / HIGH-WAIST (OPTIONAL) -------------- //
+document.querySelectorAll(".karate-high-waist-option").forEach(option => {
 
+  option.addEventListener("click", () => {
+
+    const isSelected = option.classList.contains("selected");
+
+    // si ya está seleccionada -> des-seleccionar
+    if (isSelected) {
+      option.classList.remove("selected", "bg-black/60", "text-white");
+      option.querySelector(".option-text").classList.remove("text-white");
+      option.querySelector(".option-price").classList.remove("text-white");
+
+      const circle = option.querySelector(".circle");
+      const inner = option.querySelector(".inner-circle");
+      circle.classList.remove("border-white");
+      inner.classList.add("hidden");
+      inner.classList.remove("bg-white");
+
+      return; // evita re-selección
+    }
+
+    // limpiar selección previa (si en el futuro agregás más opciones del mismo tipo)
+    document.querySelectorAll(".karate-high-waist-option").forEach(opt => {
+      opt.classList.remove("selected", "bg-black/60", "text-white");
+      opt.querySelector(".option-text").classList.remove("text-white");
+      opt.querySelector(".option-price").classList.remove("text-white");
+
+      const circle = opt.querySelector(".circle");
+      const inner = opt.querySelector(".inner-circle");
+      circle.classList.remove("border-white");
+      inner.classList.add("hidden");
+      inner.classList.remove("bg-white");
+    });
+
+    // aplicar nueva selección
+    option.classList.add("selected", "bg-black/60", "text-white");
+    option.querySelector(".option-text").classList.add("text-white");
+    option.querySelector(".option-price").classList.add("text-white");
+
+    const circle = option.querySelector(".circle");
+    const inner = option.querySelector(".inner-circle");
+    circle.classList.add("border-white");
+    inner.classList.remove("hidden");
+    inner.classList.add("bg-white");
+  });
+
+});
 
 
 // -------------- SELECTIONS / SHRINKAGE -------------- //
@@ -107,6 +153,23 @@ document.querySelectorAll(".karate-hems-option").forEach(option => {
 
   option.addEventListener("click", () => {
 
+    const isSelected = option.classList.contains("selected");
+
+    // Si ya está seleccionada -> des-seleccionarla
+    if (isSelected) {
+      option.classList.remove("selected", "bg-black/60", "text-white");
+      option.querySelector(".option-text").classList.remove("text-white");
+      option.querySelector(".option-price").classList.remove("text-white");
+
+      const circle = option.querySelector(".circle");
+      const inner = option.querySelector(".inner-circle");
+      circle.classList.remove("border-white");
+      inner.classList.add("hidden");
+      inner.classList.remove("bg-white");
+
+      return; // <- importante! evita re-seleccionar
+    }
+
     // limpiar selección previa
     document.querySelectorAll(".karate-hems-option").forEach(opt => {
       opt.classList.remove("selected", "bg-black/60", "text-white");
@@ -119,17 +182,17 @@ document.querySelectorAll(".karate-hems-option").forEach(option => {
       inner.classList.remove("bg-white");
     });
 
-    // aplicar selección a la clickeada
+    // aplicar selección
     option.classList.add("selected", "bg-black/60", "text-white");
     option.querySelector(".option-text").classList.add("text-white");
     option.querySelector(".option-price").classList.add("text-white");
 
     const circle = option.querySelector(".circle");
     const inner = option.querySelector(".inner-circle");
-
     circle.classList.add("border-white");
     inner.classList.remove("hidden");
     inner.classList.add("bg-white");
+
   });
 
 });

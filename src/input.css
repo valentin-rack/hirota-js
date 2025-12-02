@@ -87,38 +87,18 @@ input[type="number"] {
 }
 
 
-/* =============== PRODUCTS / KARATE-GI MODEL SELECTION =============== */
-.karate-gi-option:not(.selected):hover {
-  background-color: rgba(0,0,0,0.1);
-}
-
-.karate-gi-option:not(.selected):hover .inner-circle {
-  display: block; /* aparece en hover */
-  background-color: rgba(0,0,0,0.5);
-}
-
-
-/* =============== PRODUCTS / HIGH-WAIST (OPTIONAL) SELECTION =============== */
-
-
-
-/* =============== PRODUCTS / SHRINKAGE SELECTION =============== */
-.karate-shrink-option:not(.selected):hover {
-  background-color: rgba(0,0,0,0.1);
-}
-
-.karate-shrink-option:not(.selected):hover .inner-circle {
-  display: block; /* aparece en hover */
-  background-color: rgba(0,0,0,0.5);
-}
-
-
-/* =============== PRODUCTS / HEMS SELECTION =============== */
+/* =============== PRODUCTS / ALL SELECTABLE OPTIONS =============== */
+.karate-gi-option:not(.selected):hover,
+.karate-high-waist-option:not(.selected):hover,
+.karate-shrink-option:not(.selected):hover,
 .karate-hems-option:not(.selected):hover {
   background-color: rgba(0,0,0,0.1);
 }
 
+.karate-gi-option:not(.selected):hover .inner-circle,
+.karate-high-waist-option:not(.selected):hover .inner-circle,
+.karate-shrink-option:not(.selected):hover .inner-circle,
 .karate-hems-option:not(.selected):hover .inner-circle {
-  display: block; /* aparece en hover */
+  display: block;
   background-color: rgba(0,0,0,0.5);
 }
