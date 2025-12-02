@@ -537,7 +537,7 @@ main {
   font-stretch: condensed;
   font-size: 16px;
   font-weight: 400;
-  color: green;
+  color: var(--color-hirota-blue);;
 }
 /* #endregion */
 
@@ -759,7 +759,16 @@ main {
   margin-top: 48px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 10px;
+}
+
+#form-title {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  color: var(--color-bold);
+  text-align: left;
+  font-size: 16px;
+  margin-bottom: 2px;
 }
 
 .form-title {
@@ -774,7 +783,7 @@ main {
 #contactForm {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
 }
 
 #contactForm input,
@@ -783,6 +792,24 @@ main {
   padding: 10px;
   border: var(--card-border);
   resize: none;
+  background: transparent;
+  color: rgba(0, 0, 0);
+}
+
+#contactForm input::placeholder,
+#contactForm textarea::placeholder {
+  color: var(--color-light);
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+  outline: none;
+  border-color: rgba(0, 0, 0, 0.7);
+  background: transparent;
+}
+
+.input-valid {
+  background: #E8F0FE !important;
 }
 
 .btn-send {
@@ -810,13 +837,15 @@ main {
   color: red;
   font-family: var(--font-mono);
   font-size: 0.9rem;
+  text-align: left;
 }
 
 .form-success {
-  color: green;
+  color: var(--color-hirota-blue);
   font-family: var(--font-mono);
   font-size: 0.9rem;
 }
+
 /* #endregion */
 
 
