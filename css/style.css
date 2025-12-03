@@ -298,6 +298,11 @@ main {
   display: flex;
   flex-direction: column;
   background-color: transparent;
+  transition: box-shadow 0.1s ease; /* para animación */
+}
+.card:hover {
+  border-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Card Image */
