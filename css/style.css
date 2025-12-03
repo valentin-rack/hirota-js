@@ -208,7 +208,7 @@ main {
 
 /* Store header */
 .store-header {
-  max-width: var(--cart-max-width);
+  max-width: 1200px;
   border-bottom: var(--card-border);
   width: 100%;
   display: flex;
@@ -231,7 +231,7 @@ main {
 
 /* Filters & Search-bar */
 .store-tools {
-  max-width: var(--cart-max-width);
+  max-width: 1200px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -283,13 +283,25 @@ main {
 
 /* Cards grid */
 .cards-grid {
-  list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 2rem;
   padding: 40px 0;
-  width: 95%;
-  margin-inline: auto;
+  width: 100%;                 /* ocupa todo el disponible */
+  max-width: 1200px; /* 👈 igual que la barra */
+  margin-inline: auto;         /* lo centra */
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 640px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 /* Cards */
