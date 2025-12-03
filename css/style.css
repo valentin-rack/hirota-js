@@ -110,8 +110,8 @@ main {
 /* #region NAVBAR */
 .navbar {
   height: var(--nav-bar-height);
-  background-color: rgba(240, 240, 240, 0.3); 
-  backdrop-filter: blur(2px);
+  background-color: rgba(255, 255, 255, 0.35); 
+  backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: fixed;
@@ -556,21 +556,47 @@ main {
   gap: 32px;
 }
 
+/* main header */
+.main-header {
+  max-width: var(--cart-max-width);
+  border-bottom: var(--card-border);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2px;
+}
+.main-header h1 {
+  color: var(--color-bold);
+  font-size: var(--font-size-h1);
+  font-family: var(--font-sans);
+  font-stretch: condensed;
+  font-weight: 700;
+}
+.main-header p {
+  font-family: var(--font-mono);
+  color: var(--color-light);
+  font-size: var(--font-size-p);
+}
+
 /* HERO TEXT */
 .hero-title {
   font-family: var(--font-sans);
   font-stretch: condensed;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-light);
   letter-spacing: 1px;
+  margin-bottom: 20px;
 }
 
 .hero-subtitle {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
+  font-stretch: condensed;
   font-size: 1rem;
   color: var(--color-light);
   margin-top: 6px;
+  letter-spacing: 2px;
 }
 
 /* HERO IMAGE */
@@ -590,25 +616,27 @@ main {
 .btn-cta {
   font-family: var(--font-sans);
   font-stretch: condensed;
-  font-weight: 600;
-  font-size: 1.2rem;
-  letter-spacing: 1px;
-  color: var(--color-light);
+  font-size: 17px;
+  letter-spacing: 0.5px; /* más elegante que 1px */
+  color: var(--btn-color);
   background: transparent;
   padding: 12px 32px;
-  text-decoration: none;
-  display: inline-block;
-  transition: 0.2s ease;
   border: var(--btn-border);
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+  text-decoration: none;
 }
 
 .btn-cta:hover {
-  color: var(--color-white);
-  background: var(--color-bold);
-  opacity: .8;
+  color: var(--btn-color-hover);
+  border-color: var(--btn-border-hover-intense);
+  background-color: transparent; /* NO rellenar, estilo Hirota */
+  font-weight: 700; /* refuerza acción */
 }
-/* #endregion */
 
+/* #endregion */
 
 
 
@@ -815,12 +843,11 @@ main {
 .btn-send {
   font-family: var(--font-sans);
   font-stretch: condensed;
-  font-weight: 600;
   font-size: 16px;
   letter-spacing: 1px;
   color: var(--color-light);
   background: transparent;
-  padding: 12px 32px;
+  padding: 10px 32px;
   text-decoration: none;
   display: inline-block;
   transition: 0.2s ease;
@@ -828,9 +855,10 @@ main {
 }
 
 .btn-send:hover {
-  color: var(--color-white);
-  background: var(--color-bold);
-  opacity: .8;
+  color: var(--btn-color-hover);
+  border-color: var(--btn-border-hover-intense);
+  background-color: transparent; /* NO rellenar, estilo Hirota */
+  font-weight: 700; /* refuerza acción */
 }
 
 .form-error {
@@ -929,29 +957,3 @@ main {
   position: relative;
   display: inline-block;
 }
-
-
-
-
-/* ==================== [ MOUSE FALLING ASCII ] ==================== */
-/* .falling-symbol {
-  position: fixed;
-  color: rgba(0, 0, 0, 0.35);
-  font-family: monospace;
-  font-size: 14px;
-  pointer-events: none;     
-  user-select: none;
-  animation: fallSymbol 1.5s ease-out forwards;
-  z-index: 9999;
-}
-
-@keyframes fallSymbol {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(60px) scale(0.6);
-    opacity: 0;
-  }
-} */

@@ -78,5 +78,173 @@
     "category": "obi",
     "price": 110,
     "image": "../images/hirota-B-602.jpg"
+  },
+  {
+    "id": 11,
+    "name": "HIROTA Seiken Supporter",
+    "description": "JKA approved | traditional kumite gear",
+    "category": "equipment",
+    "price": 20,
+    "image": "../images/product-id-11.jpg"
+  },
+  {
+    "id": 12,
+    "name": "HIROTA Red Fist Supporter",
+    "description": "JKF approved | AKA kumite gear",
+    "category": "equipment",
+    "price": 35,
+    "image": "../images/product-id-12.jpg"
+  },
+  {
+    "id": 13,
+    "name": "HIROTA Blue Fist Supporter",
+    "description": "JKF approved | AO kumite gear",
+    "category": "equipment",
+    "price": 35,
+    "image": "../images/product-id-13.jpg"
+  },
+  {
+    "id": 14,
+    "name": "HIROTA Shin & Instep Guard Set",
+    "description": "JKF approved | AKA & AO kumite gear",
+    "category": "equipment",
+    "price": 110,
+    "image": "../images/product-id-14.jpg"
+  },
+  {
+    "id": 15,
+    "name": "HIROTA Red & Blue Laces",
+    "description": "JKF approved | AKA & AO kumite gear",
+    "category": "equipment",
+    "price": 40,
+    "image": "../images/product-id-15.jpg"
+  },
+  {
+    "id": 16,
+    "name": "HIROTA Mouth Guard",
+    "description": "upper teeth mouthpiece | kumite protection",
+    "category": "equipment",
+    "price": 9,
+    "image": "../images/product-id-16.jpg"
+  },
+  {
+    "id": 17,
+    "name": "HIROTA Groin Supporter",
+    "description": "groin supporter | kumite protection",
+    "category": "equipment",
+    "price": 18,
+    "image": "../images/product-id-17.jpg"
+  },
+  {
+    "id": 18,
+    "name": "HIROTA Body Protector",
+    "description": "body protector for men | kumite protection",
+    "category": "equipment",
+    "price": 37,
+    "image": "../images/product-id-18.jpg"
+  },
+  {
+    "id": 19,
+    "name": "HIROTA Body Protector",
+    "description": "body protector for women | kumite protection",
+    "category": "equipment",
+    "price": 37,
+    "image": "../images/product-id-19.jpg"
+  },
+  {
+    "id": 20,
+    "name": "HIROTA Match Flags",
+    "description": "white, red, and blue flags | referee equipment",
+    "category": "equipment",
+    "price": 12,
+    "image": "../images/product-id-20.jpg"
+  },
+  {
+    "id": 21,
+    "name": "HIROTA Whistle",
+    "description": "stainless steel whistle | referee equipment",
+    "category": "equipment",
+    "price": 6,
+    "image": "../images/product-id-21.jpg"
+  },
+  {
+    "id": 22,
+    "name": "HIROTA Hand Mitt",
+    "description": "40cm long x 20cm wide x 6cm thick | training equipment",
+    "category": "equipment",
+    "price": 19,
+    "image": "../images/product-id-22.jpg"
+  },
+  {
+    "id": 23,
+    "name": "HIROTA Hand Mitt Double",
+    "description": "40cm long x 20cm wide x 12cm thick | training equipment",
+    "category": "equipment",
+    "price": 24,
+    "image": "../images/product-id-23.jpg"
+  },
+  {
+    "id": 24,
+    "name": "HIROTA Punching Mitts",
+    "description": "25cm long x 19cm wide x 9cm thick | training equipment",
+    "category": "equipment",
+    "price": 55,
+    "image": "../images/product-id-24.jpg"
+  },
+  {
+    "id": 25,
+    "name": "HIROTA Kick Mitt",
+    "description": "47cm long x 23cm wide x 11cm thick | training equipment",
+    "category": "equipment",
+    "price": 48,
+    "image": "../images/product-id-25.jpg"
+  },
+  {
+    "id": 26,
+    "name": "HIROTA Big Mitt",
+    "description": "65cm long x 43cm wide x 13cm thick | training equipment",
+    "category": "equipment",
+    "price": 75,
+    "image": "../images/product-id-26.jpg"
+  },
+  {
+    "id": 27,
+    "name": "HIROTA Fist long-sleeve t-shirt",
+    "description": "100% cotton, unisex | hirota apparel",
+    "category": "accessories",
+    "price": 28,
+    "image": "../images/product-id-27.jpg"
+  },
+  {
+    "id": 28,
+    "name": "HIROTA Fist short-sleeve t-shirt",
+    "description": "100% cotton, unisex | hirota apparel",
+    "category": "accessories",
+    "price": 20,
+    "image": "../images/product-id-28.jpg"
+  },
+  {
+    "id": 29,
+    "name": "HIROTA Muffler Towel",
+    "description": "26cm wide x 115cm long | hirota apparel",
+    "category": "accessories",
+    "price": 15,
+    "image": "../images/product-id-29.jpg"
+  },
+  {
+    "id": 30,
+    "name": "HIROTA Hand Towel",
+    "description": "33cm wide x 90cm long | hirota apparel",
+    "category": "accessories",
+    "price": 11,
+    "image": "../images/product-id-30.jpg"
+  },
+  {
+    "id": 31,
+    "name": "HIROTA Bear Keychains",
+    "description": "cute bear karateka's | hirota merchandise",
+    "category": "accessories",
+    "price": 8.5,
+    "image": "../images/product-id-31.jpg"
   }
 ]
