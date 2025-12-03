@@ -51,9 +51,9 @@
 
   /* Footer */
   --footer-logo-width: 95%;
-  --footer-logo-max-width: 600px;
-  --footer-logo-opacity: 0.2;
-  --footer-logo-opacity-hover: 0.45;
+  --footer-logo-max-width: 700px;
+  --footer-logo-opacity: 0.4;
+  --footer-logo-opacity-hover: 0.7;
 }
 
 
@@ -264,7 +264,7 @@ main {
 }
 
 .filter-btn {
-  padding: 3px 12px;
+  padding: 3px 20px;
   border: var(--card-border);
   background: transparent;
   cursor: pointer;
@@ -276,9 +276,9 @@ main {
 
 .filter-btn:hover,
 .filter-btn.active {
-  border-color: rgba(226, 30, 32, 0.7);
+  border-color: rgba(0, 0, 0, 0.5);
   font-weight: 700;
-  color: rgba(226, 30, 32, 0.7);
+  color: rgba(0, 0, 0, 0.5);
 }
 
 /* Cards grid */
@@ -988,8 +988,8 @@ main {
   padding: 4px 0;
 }
 .footer-copyright p {
-  color: var(--color-lighter);
-  font-size: 0.7rem;
+  color: var(--color-light);
+  font-size: 16px;
   font-family: monospace;
   letter-spacing: 0.3px;
 }

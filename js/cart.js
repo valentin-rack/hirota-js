@@ -58,7 +58,7 @@ function renderCart() {
         <button class="btn-remove" data-id="${item.id}">Remove Item</button>
       </div>
 
-      <span class="cart-item-price">USD $${item.price}</span>
+      <span class="cart-item-price">USD $${item.price * item.quantity}</span>
     `;
 
     cartContainer.appendChild(article);
@@ -125,6 +125,9 @@ function activateQuantityButtons() {
 
       localStorage.setItem("cart", JSON.stringify(cart));
       article.querySelector(".qty-value").textContent = item.quantity;
+
+      // actualizar precio individual
+      article.querySelector(".cart-item-price").textContent = `USD $${item.price * item.quantity}`;
 
       updateSubtotal();
 
