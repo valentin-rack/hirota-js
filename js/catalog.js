@@ -44,6 +44,88 @@ function renderProducts() {
 
 
 
+
+
+// =================================================
+// =============== SEARCH / FILTER =================
+// =================================================
+
+// ===== SEARCH-BAR =====
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("input", () => {
+  const text = searchInput.value.toLowerCase();
+
+  // find() devuelve solo uno, pero queremos mostrar resultados parciales
+  // así que usamos filter y mostramos todos los productos cuyo nombre coincida
+  const results = products.filter(product =>
+    product.name.toLowerCase().includes(text)
+  );
+
+  renderFiltered(results);
+});
+
+
+// ===== CATEGORY FILTERS =====
+const filterButtons = document.querySelectorAll(".filter-btn");
+
+filterButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const category = btn.dataset.category;
+
+    // UI state
+    filterButtons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    if (category === "all") {
+      renderFiltered(products);
+      return;
+    }
+
+    const filtered = products.filter(p => p.category === category);
+    renderFiltered(filtered);
+  });
+});
+
+
+// ===== HELPER: RENDER ANY PRODUCT ARRAY =====
+function renderFiltered(list) {
+  productList.innerHTML = "";
+
+  list.forEach(product => {
+    const li = document.createElement("li");
+    li.classList.add("card");
+
+    const [desc1, desc2] = product.description.split(/[|]/).map(str => str.trim());
+
+    li.innerHTML = `
+      <div class="card-image">
+        <img src="${product.image}" alt="${product.name}">
+      </div>
+
+      <div class="card-content">
+        <p class="card-title">${product.name}</p>
+
+        <div class="card-details">
+          <p>${desc1}</p>
+          <p>${desc2}</p>
+        </div>
+
+        <div class="card-price-action">
+          <span class="card-price">USD $${product.price}</span>
+          <button class="btn-add" data-id="${product.id}">Add to Cart</button>
+        </div>
+      </div>
+    `;
+
+    productList.appendChild(li);
+  });
+
+  activateAddToCartButtons();
+}
+
+
+
 // =================================================
 // ================= ADD TO CART ===================
 // =================================================
