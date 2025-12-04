@@ -10,7 +10,6 @@
     --color-red-500: oklch(63.7% 0.237 25.331);
     --color-neutral-400: oklch(70.8% 0 0);
     --color-neutral-500: oklch(55.6% 0 0);
-    --color-neutral-600: oklch(43.9% 0 0);
     --color-neutral-700: oklch(37.1% 0 0);
     --color-black: #000;
     --color-white: #fff;
@@ -27,7 +26,6 @@
     --tracking-wide: 0.025em;
     --tracking-wider: 0.05em;
     --leading-tight: 1.25;
-    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --blur-xs: 4px;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
@@ -701,11 +699,11 @@
   }
 }
 @layer utilities {
-  .scrollbar-none {
-    scrollbar-width: none;
-  }
   .scrollbar-none::-webkit-scrollbar {
     display: none;
+  }
+  .scrollbar-none {
+    scrollbar-width: none;
   }
 }
 input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
@@ -715,19 +713,19 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 input[type="number"] {
   -moz-appearance: textfield;
 }
-.karate-input-row:not(.completed):hover, .karate-input-row:not(.completed):focus-within {
+.gi-input-row:not(.completed):hover, .gi-input-row:not(.completed):focus-within {
   background-color: rgba(0, 0, 0, 0.1);
 }
-.karate-input-row.completed {
+.gi-input-row.completed {
   background-color: rgba(0, 0, 0, 0.6);
 }
-.karate-input-row.completed .input-text, .karate-input-row.completed .karate-input {
+.gi-input-row.completed .input-text, .gi-input-row.completed .gi-input {
   color: white !important;
 }
-.karate-gi-option:not(.selected):hover, .karate-high-waist-option:not(.selected):hover, .karate-shrink-option:not(.selected):hover, .karate-hems-option:not(.selected):hover {
+.gi-model:not(.selected):hover, .gi-high-waist:not(.selected):hover, .gi-shrinkage:not(.selected):hover, .gi-hems:not(.selected):hover {
   background-color: rgba(0,0,0,0.1);
 }
-.karate-gi-option:not(.selected):hover .inner-circle, .karate-high-waist-option:not(.selected):hover .inner-circle, .karate-shrink-option:not(.selected):hover .inner-circle, .karate-hems-option:not(.selected):hover .inner-circle {
+.gi-model:not(.selected):hover .inner-circle, .gi-high-waist:not(.selected):hover .inner-circle, .gi-shrinkage:not(.selected):hover .inner-circle, .gi-hems:not(.selected):hover .inner-circle {
   display: block;
   background-color: rgba(0,0,0,0.5);
 }

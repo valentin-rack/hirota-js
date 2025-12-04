@@ -40,13 +40,13 @@
 }
 
 
-/* ===== NO SCROLL-BARS, E-MAILS HOVER ===== */
 @layer utilities {
-  .scrollbar-none {
-    scrollbar-width: none;          /* Firefox */
-  }
+  /* no scroll-bars */
   .scrollbar-none::-webkit-scrollbar {
-    display: none;                  /* Chrome, Safari, Edge */
+    display: none; /* Chrome, Safari, Edge */                
+  }
+  .scrollbar-none {
+    scrollbar-width: none; /* Firefox */         
   }
 }
 
@@ -58,7 +58,7 @@
 /* ================================================================= */
 
 
-/* ==================== PRODUCTS / INPUTS ==================== */
+/* ==================== INPUTS STYLING ==================== */
 /* Quitar flechitas ↑↓ de los inputs */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -70,34 +70,33 @@ input[type="number"] {
 }
 
 /* HOVER (solo si NO está marcada como completed) */
-.karate-input-row:not(.completed):hover,
-.karate-input-row:not(.completed):focus-within {
+.gi-input-row:not(.completed):hover,
+.gi-input-row:not(.completed):focus-within {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* completed state */
-.karate-input-row.completed {
+.gi-input-row.completed {
   background-color: rgba(0, 0, 0, 0.6);
 }
-
-.karate-input-row.completed .input-text,
-.karate-input-row.completed .karate-input {
+.gi-input-row.completed .input-text,
+.gi-input-row.completed .gi-input {
   color: white !important;
 }
 
 
-/* =============== PRODUCTS / ALL SELECTABLE OPTIONS =============== */
-.karate-gi-option:not(.selected):hover,
-.karate-high-waist-option:not(.selected):hover,
-.karate-shrink-option:not(.selected):hover,
-.karate-hems-option:not(.selected):hover {
+/* =============== PRODUCTS / ALL SELECTABLE OPTIONS HOVER =============== */
+.gi-model:not(.selected):hover,
+.gi-high-waist:not(.selected):hover,
+.gi-shrinkage:not(.selected):hover,
+.gi-hems:not(.selected):hover {
   background-color: rgba(0,0,0,0.1);
 }
 
-.karate-gi-option:not(.selected):hover .inner-circle,
-.karate-high-waist-option:not(.selected):hover .inner-circle,
-.karate-shrink-option:not(.selected):hover .inner-circle,
-.karate-hems-option:not(.selected):hover .inner-circle {
+.gi-model:not(.selected):hover .inner-circle,
+.gi-high-waist:not(.selected):hover .inner-circle,
+.gi-shrinkage:not(.selected):hover .inner-circle,
+.gi-hems:not(.selected):hover .inner-circle {
   display: block;
   background-color: rgba(0,0,0,0.5);
 }
