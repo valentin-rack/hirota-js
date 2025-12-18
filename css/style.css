@@ -177,6 +177,48 @@ main {
 }
 
 /* ------------------------ Mobile -------------------------- */
+/* Hamburguer (hidden en desktop) */
+.hamburger{
+  display:none;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburger span{
+  display:block;
+  height: 2px;
+  margin: 4px 0;
+  background: var(--color-bold);
+}
+
+/* Mobile: ocultar nav-left y mostrar hamburguesa */
+@media (max-width: 480px){
+  .navbar {
+    padding: 0 10px 0 5px;
+  }
+  .nav-left {
+    display:none;
+  }
+  .hamburger {
+    display:block;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* #endregion */
@@ -708,7 +750,6 @@ main {
   background-color: transparent; /* NO rellenar, estilo Hirota */
   font-weight: 700; /* refuerza acción */
 }
-
 /* #endregion */
 
 
