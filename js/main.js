@@ -17,6 +17,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+// ===== MOBILE NAV-BAR LOGICS =====
+const hamburgerBtn = document.getElementById("hamburgerBtn");
+const drawer = document.getElementById("mobileDrawer");
+const overlay = document.getElementById("menuOverlay");
+const closeBtn = document.getElementById("drawerCloseBtn");
+
+function openMenu(){
+  drawer.classList.add("is-open");
+  overlay.classList.add("is-open");
+  document.body.classList.add("no-scroll");
+  hamburgerBtn.setAttribute("aria-expanded", "true");
+  drawer.setAttribute("aria-hidden", "false");
+}
+
+function closeMenu(){
+  drawer.classList.remove("is-open");
+  overlay.classList.remove("is-open");
+  document.body.classList.remove("no-scroll");
+  hamburgerBtn.setAttribute("aria-expanded", "false");
+  drawer.setAttribute("aria-hidden", "true");
+}
+
+hamburgerBtn.addEventListener("click", openMenu);
+closeBtn.addEventListener("click", closeMenu);
+overlay.addEventListener("click", closeMenu);
+
+// cerrar con ESC
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeMenu();
+});
+
+// cerrar al clickear un link del drawer
+drawer.addEventListener("click", (e) => {
+  if (e.target.tagName === "A") closeMenu();
+});
+
+
+
 // ===== UPDATE CART COUNT GLOBALLY =====
 
 // Función que actualiza el número de ítems en el enlace del carrito

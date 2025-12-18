@@ -176,6 +176,8 @@ main {
   text-decoration-style:dotted;
 }
 
+/* ------------------------ Mobile -------------------------- */
+
 
 /* #endregion */
 
@@ -621,9 +623,10 @@ main {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-top: calc(var(--nav-bar-height) + 40px);
+  padding: calc(40px + var(--nav-bar-height)) 40px 40px; 
   gap: 32px;
 }
+
 
 /* main header */
 .main-header {
@@ -647,6 +650,7 @@ main {
   color: var(--color-light);
   font-size: var(--font-size-p);
 }
+
 
 /* HERO TEXT */
 .hero-title {
