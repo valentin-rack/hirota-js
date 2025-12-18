@@ -227,6 +227,184 @@ document.querySelectorAll(".gi-hems").forEach(option => {
 
 
 
-// ---------------------------------------------------------------- //
-// ----------------------- SELECTIONS LOGIC ----------------------- //
-// ---------------------------------------------------------------- //
+
+
+
+// ------------------------------------------------------------------ //
+// ------------------ KARATE-GI CONFIGURATOR LOGICS------------------ //
+// ------------------------------------------------------------------ //
+
+/*
+1) collectData()
+2) calculatePrice()
+3) renderSelectedFeatures()
+4) updateGiConfigurator()
+*/
+
+// objeto global "giData"
+const giData = {
+  model: null,
+  modelBasePrice: 250,
+  jacket: {},
+  pants: { highWaist: false, measures: {} },
+  shrinkage: null,
+  body: {},
+  embroidery: {},
+  hems: null,
+  price: 0
+};
+
+
+// 1) collectData()
+// recorre el formulario y guarda lo seleccionado en "giData"
+
+function collectData() {
+  // MODEL (mandatory)
+  const selectedModel = document.querySelector(".gi-model.selected");
+  if (selectedModel) {
+    giData.model = selectedModel.dataset.id; // "tsubasa"
+  }
+
+  // JACKET MEASUREMENTS
+  giData.jacket = {};
+  document.querySelectorAll(".gi-jacket-measure").forEach(input => {
+    if (input.value.trim()) {
+      giData.jacket[input.dataset.id] = Number(input.value.trim()); // {A=97, B=61, ...}
+    }
+  });
+
+  // PANTS MEASUREMENTS
+  giData.pants.measures = {};
+  document.querySelectorAll(".gi-pants-measure").forEach(input => {
+    if (input.value.trim()) {
+      giData.pants.measures[input.dataset.id] = Number(input.value.trim());
+    }
+  });
+
+  // HIGH-WAIST
+  giData.pants.highWaist = !!document.querySelector(".gi-high-waist.selected");
+
+  // SHRINKAGE (mandatory)
+  const selectedShrink = document.querySelector(".gi-shrinkage.selected");
+  if (selectedShrink) {
+    giData.shrinkage = selectedShrink.dataset.id; // "shrinkage-not-accounted"
+  }
+
+  // BODY MEASUREMENTS
+  giData.body = {};
+  document.querySelectorAll(".gi-body-measure").forEach(input => {
+    if (input.value.trim()) {
+      giData.body[input.dataset.id] = Number(input.value.trim());
+    }
+  });
+
+  // EMBROIDERY optional
+  giData.embroidery = {};
+  document.querySelectorAll(".gi-embroidery").forEach(input => {
+    const text = input.value.trim();
+    if (text !== "") {
+      const price = text.length * Number(input.dataset.pricePerChar);
+      giData.embroidery[input.dataset.id] = { text, price };
+    }
+  });
+
+  // HEMS optional
+  const selectedHems = document.querySelector(".gi-hems.selected");
+  giData.hems = selectedHems
+    ? {
+        id: selectedHems.dataset.id,
+        label: selectedHems.querySelector(".option-text").textContent,
+        price: Number(selectedHems.dataset.price)
+      }
+    : null;
+}
+
+
+// 2) calculatePrice()
+// calcula el precio a partir de las features seleccionadas
+
+function calculatePrice() {
+  let total = giData.modelBasePrice;
+
+  // HIGH-WAIST
+  if (giData.pants.highWaist) total += 15;
+
+  // EMBROIDERY
+  Object.values(giData.embroidery).forEach(obj => total += obj.price);
+
+  // HEMS
+  if (giData.hems) total += giData.hems.price;
+
+  giData.price = total;
+}
+
+
+// 3) renderSelectedFeatures()
+// renderiza en el DOM las features seleccionadas
+
+function renderSelectedFeatures() {
+  const container = document.querySelector(".gi-selected-features");
+  container.innerHTML = "";
+
+  // MODEL LINE
+  const modelEl = document.querySelector(".gi-model.selected .option-text");
+  container.insertAdjacentHTML("beforeend",
+    `<div class="flex justify-between"><p>${modelEl.textContent}</p><p>$${giData.modelBasePrice}</p></div>`);
+
+  // JACKET MEASURES
+  Object.entries(giData.jacket).forEach(([k,v]) =>
+    container.insertAdjacentHTML("beforeend", `<p>${k} = ${v}</p>`)
+  );
+
+  // HIGH-WAIST
+  if (giData.pants.highWaist)
+    container.insertAdjacentHTML("beforeend",
+      `<div class="flex justify-between"><p>high-waist added</p><p>$15</p></div>`);
+
+  // PANTS MEASURES
+  Object.entries(giData.pants.measures).forEach(([k,v]) =>
+    container.insertAdjacentHTML("beforeend", `<p>${k} = ${v}</p>`)
+  );
+
+  // SHRINKAGE
+  container.insertAdjacentHTML("beforeend",
+    `<p>${giData.shrinkage === "shrinkage-accounted"
+       ? "shrinkage already accounted"
+       : "shrinkage to be added"}</p>`);
+
+  // BODY MEASUREMENTS
+  Object.entries(giData.body).forEach(([k,v]) =>
+    container.insertAdjacentHTML("beforeend", `<p>${k} = ${v}</p>`)
+  );
+
+  // EMBROIDERY
+  Object.entries(giData.embroidery).forEach(([id,obj]) =>
+    container.insertAdjacentHTML("beforeend",
+      `<div class="flex justify-between"><p>${id.replace("embr-","")} embr = ${obj.text}</p><p>$${obj.price.toFixed(1)}</p></div>`
+    )
+  );
+
+  // HEMS
+  if (giData.hems)
+    container.insertAdjacentHTML("beforeend",
+      `<div class="flex justify-between"><p>${giData.hems.label}</p><p>$${giData.hems.price}</p></div>`);
+
+  // SUBTOTAL
+  document.querySelector(".gi-subtotal").textContent = "$" + giData.price;
+}
+
+
+
+// 4) updateGiConfigurator()
+function updateGiConfigurator() {
+  collectData();
+  calculatePrice();
+  renderSelectedFeatures();
+}
+
+// escucha cualquier cambio de input o click en opciones
+document.addEventListener("click", updateGiConfigurator);
+document.addEventListener("input", updateGiConfigurator);
+
+// inicial
+updateGiConfigurator();
