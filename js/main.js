@@ -1,7 +1,7 @@
 // ===== LÓGICAS GENERALES =====
 
 // Active nav-bar link modifier
-document.querySelectorAll('.nav-left a, .nav-right a').forEach(link => {
+document.querySelectorAll('.nav-left a, .nav-right a, .mobile-links a').forEach(link => {
   if (link.href === window.location.href) {
     link.classList.add('active');
   }
@@ -19,38 +19,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // ===== MOBILE NAV-BAR LOGICS =====
 const hamburgerBtn = document.getElementById("hamburgerBtn");
-const drawer = document.getElementById("mobileDrawer");
-const overlay = document.getElementById("menuOverlay");
-const closeBtn = document.getElementById("drawerCloseBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const mobileOverlay = document.getElementById("mobileOverlay");
+const mobileCloseBtn = document.getElementById("mobileCloseBtn");
 
-function openMenu(){
-  drawer.classList.add("is-open");
-  overlay.classList.add("is-open");
+function openMobileMenu() {
+  mobileMenu.classList.add("is-open");
+  mobileOverlay.classList.add("is-open");
   document.body.classList.add("no-scroll");
-  hamburgerBtn.setAttribute("aria-expanded", "true");
-  drawer.setAttribute("aria-hidden", "false");
+  mobileMenu.setAttribute("aria-hidden", "false");
 }
 
-function closeMenu(){
-  drawer.classList.remove("is-open");
-  overlay.classList.remove("is-open");
+function closeMobileMenu() {
+  mobileMenu.classList.remove("is-open");
+  mobileOverlay.classList.remove("is-open");
   document.body.classList.remove("no-scroll");
-  hamburgerBtn.setAttribute("aria-expanded", "false");
-  drawer.setAttribute("aria-hidden", "true");
+  mobileMenu.setAttribute("aria-hidden", "true");
 }
 
-hamburgerBtn.addEventListener("click", openMenu);
-closeBtn.addEventListener("click", closeMenu);
-overlay.addEventListener("click", closeMenu);
+hamburgerBtn.addEventListener("click", openMobileMenu);
+mobileCloseBtn.addEventListener("click", closeMobileMenu);
+mobileOverlay.addEventListener("click", closeMobileMenu);
 
-// cerrar con ESC
+// Cerrar con ESC
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") closeMenu();
+  if (e.key === "Escape") closeMobileMenu();
 });
 
-// cerrar al clickear un link del drawer
-drawer.addEventListener("click", (e) => {
-  if (e.target.tagName === "A") closeMenu();
+// Cerrar al tocar un link
+mobileMenu.addEventListener("click", (e) => {
+  if (e.target.tagName === "A") closeMobileMenu();
 });
 
 

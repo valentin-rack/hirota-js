@@ -12,7 +12,7 @@
   <!-- ===== HEADER / NAVBAR ===== -->
   <header class="navbar">
     <!-- hamburger mobile button -->
-    <button class="hamburger" aria-label="Open menu" type="button">
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" type="button">
       <span></span>
       <span></span>
       <span></span>
@@ -34,6 +34,23 @@
       <a href="cart.html" id="cart-link">Cart (0)</a>
     </div>
   </header>
+
+  <!-- ===== MOBILE MENU (FULLSCREEN) ===== -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <!-- ✕ button -->
+    <button class="mobile-close" id="mobileCloseBtn" aria-label="Close menu" type="button">✕</button>
+    <!-- mobile links-->
+    <nav class="mobile-links">
+      <a href="../index.html">Home</a>
+      <a href="store.html">Store</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </aside>
+
+
 
   <!-- ===== CONTENIDO PRINCIPAL DEL ABOUT ===== -->
   <main class="main-about">
